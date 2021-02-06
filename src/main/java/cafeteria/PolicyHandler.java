@@ -24,9 +24,10 @@ public class PolicyHandler{
     public void wheneverPaymentApproved_(@Payload PaymentApproved paymentApproved){
 
         if(paymentApproved.isMe()){
+		System.out.println("##### listener  : " + paymentApproved.toJson());
         	List<Point> points = pointRepository.findByPhoneNumber(paymentApproved.getPhoneNumber());
         	int p = (int)(paymentApproved.getAmt() * 0.1);
-        	if(points == null) {
+        	if(points.size() == 0) {
         		Point point = new Point();
         		point.setPhoneNumber(paymentApproved.getPhoneNumber());
         		point.setPoint(p);
@@ -43,6 +44,7 @@ public class PolicyHandler{
     public void wheneverPaymentCanceled_(@Payload PaymentCanceled paymentCanceled){
 
         if(paymentCanceled.isMe()){
+		System.out.println("##### listener  : " + paymentCanceled.toJson());
         	List<Point> points = pointRepository.findByPhoneNumber(paymentCanceled.getPhoneNumber());
         	int p = (int)(paymentCanceled.getAmt() * 0.1);
         	

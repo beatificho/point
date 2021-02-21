@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: point
-          image: username/point:latest
+          image: beatific/point:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           readinessProbe:

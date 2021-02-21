@@ -1,5 +1,5 @@
-package cafeteria;
-import cafeteria.config.kafka.KafkaProcessor;
+package cafeteriapoint;
+import cafeteriapoint.config.kafka.KafkaProcessor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

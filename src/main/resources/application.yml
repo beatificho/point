@@ -24,11 +24,11 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Point
-          destination: cafeteria
+          group: point
+          destination: cafeteriapoint
           contentType: application/json
         event-out:
-          destination: cafeteria
+          destination: cafeteriapoint
           contentType: application/json
 
 logging:
@@ -56,9 +56,9 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: Point
-          destination: cafeteria
+          group: point
+          destination: cafeteriapoint
           contentType: application/json
         event-out:
-          destination: cafeteria
+          destination: cafeteriapoint
           contentType: application/json

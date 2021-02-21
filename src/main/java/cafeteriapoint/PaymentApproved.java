@@ -1,4 +1,4 @@
-package cafeteria;
+package cafeteriapoint;
 
 public class PaymentApproved extends AbstractEvent {
 

@@ -1,14 +1,8 @@
-package cafeteria;
+package cafeteriapoint;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.PostPersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
+import java.util.List;
 
 @Entity
 @Table(name="Point_table")
@@ -25,16 +19,19 @@ public class Point {
         Accumulated accumulated = new Accumulated();
         BeanUtils.copyProperties(this, accumulated);
         accumulated.publishAfterCommit();
+
+
     }
 
-    @PreUpdate
+    @PostUpdate
     public void onPostUpdate(){
         PointCanceled pointCanceled = new PointCanceled();
         BeanUtils.copyProperties(this, pointCanceled);
         pointCanceled.publishAfterCommit();
+
+
     }
-
-
+    
     public Long getId() {
         return id;
     }
@@ -56,5 +53,8 @@ public class Point {
     public void setPoint(Integer point) {
         this.point = point;
     }
+
+
+
 
 }

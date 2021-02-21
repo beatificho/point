@@ -1,11 +1,11 @@
+package cafeteriapoint;
 
-package cafeteria;
-
-public class PaymentCanceled extends AbstractEvent {
+public class Ordered extends AbstractEvent {
 
     private Long id;
-    private Long orderId;
     private String phoneNumber;
+    private String productName;
+    private Integer qty;
     private Integer amt;
     private String status;
 
@@ -16,19 +16,26 @@ public class PaymentCanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
     public Integer getAmt() {
         return amt;

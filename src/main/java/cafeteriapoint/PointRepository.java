@@ -1,4 +1,4 @@
-package cafeteria;
+package cafeteriapoint;
 
 import java.util.List;
 

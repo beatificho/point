@@ -1,12 +1,12 @@
-package cafeteria;
+package cafeteriapoint;
 
-public class PointCanceled extends AbstractEvent {
+public class Accumulated extends AbstractEvent {
 
-	private Long id;
+    private Long id;
     private String phoneNumber;
     private Integer point;
 
-    public PointCanceled(){
+    public Accumulated(){
         super();
     }
 

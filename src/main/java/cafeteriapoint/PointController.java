@@ -16,9 +16,9 @@ public class PointController {
 	private PointRepository pointRepository;
 	
 	@PatchMapping("/cancelPoint")
-	public Point cancelPoint(@RequestBody PaymentCanceled paymentCanceled) {
-		List<Point> points = pointRepository.findByPhoneNumber(paymentCanceled.getPhoneNumber());
-		int p = (int)(paymentCanceled.getAmt() * 0.1);
+	public Point cancelPoint(@RequestBody OrderCanceled orderCanceled) {
+		List<Point> points = pointRepository.findByPhoneNumber(orderCanceled.getPhoneNumber());
+		int p = (int)(orderCanceled.getAmt() * 0.1);
 		Point point = points.get(0);
 		point.setPoint(point.getPoint() - p);
 		
